@@ -1,6 +1,15 @@
 React Meta-Framework Usage
 
 ## Using TanStack Form in TanStack Start
+TanStack Form is compatible with React out of the box, supporting SSR and being framework-agnostic. However, specific configurations are necessary, according to your chosen framework.
+
+Tomorrow we support the following meta-frameworks:
+
+TanStack Start
+Next.js
+Remix
+Using TanStack Form in TanStack Start
+This section focuses on integrating TanStack Form with TanStack Start.
 
 TanStack Start Prerequisites
 Start a new TanStack Start project, following the steps in the TanStack Start Quickstart Guide
