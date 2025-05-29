@@ -1,8 +1,6 @@
 React Meta-Framework Usage
 TanStack Form is compatible with React out of the box, supporting SSR and being framework-agnostic. However, specific configurations are necessary, according to your chosen framework.
 
-Today we support the following meta-frameworks:
-
 TanStack Start
 Next.js
 Remix
@@ -25,6 +23,7 @@ export const formOpts = formOptions({
 defaultValues: {
 firstName: '',
 age: 0,
+
 },
 })
 Next, we can create a Start Server Action that will handle the form submission on the server.
@@ -120,6 +119,7 @@ transform: useTransform((baseForm) => mergeForm(baseForm, state), [state]),
 const formErrors = useStore(form.store, (formState) => formState.errors)
 
 return (
+
 <form action={handleForm.url} method="post" encType={'multipart/form-data'}>
 {formErrors.map((error) => (
 <p key={error as string}>{error}</p>
@@ -260,6 +260,7 @@ transform: useTransform((baseForm) => mergeForm(baseForm, state!), [state]),
 const formErrors = useStore(form.store, (formState) => formState.errors)
 
 return (
+
 <form action={action as never} onSubmit={() => form.handleSubmit()}>
 {formErrors.map((error) => (
 <p key={error as string}>{error}</p>
@@ -423,6 +424,7 @@ transform: useTransform(
 const formErrors = useStore(form.store, (formState) => formState.errors)
 
 return (
+
 <Form method="post" onSubmit={() => form.handleSubmit()}>
 {formErrors.map((error) => (
 <p key={error as string}>{error}</p>
