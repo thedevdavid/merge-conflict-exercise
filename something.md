@@ -1,13 +1,6 @@
 React Meta-Framework Usage
-TanStack Form is compatible with React out of the box, supporting SSR and being framework-agnostic. However, specific configurations are necessary, according to your chosen framework.
 
-Today we support the following meta-frameworks:
-
-TanStack Start
-Next.js
-Remix
-Using TanStack Form in TanStack Start
-This section focuses on integrating TanStack Form with TanStack Start.
+## Using TanStack Form in TanStack Start
 
 TanStack Start Prerequisites
 Start a new TanStack Start project, following the steps in the TanStack Start Quickstart Guide
@@ -15,8 +8,7 @@ Install @tanstack/react-form
 Start integration
 Let's start by creating a formOption that we'll use to share the form's shape across the client and server.
 
-typescript
-
+```javascript
 // app/routes/index.tsx, but can be extracted to any other path
 import { formOptions } from '@tanstack/react-form'
 
@@ -36,6 +28,13 @@ import {
 createServerValidate,
 ServerValidateError,
 } from '@tanstack/react-form/start'
+
+import { createServerFn } from '@tanstack/start'
+
+import { formOpts } from './shared-code'
+
+
+
 
 const serverValidate = createServerValidate({
 ...formOpts,
@@ -465,3 +464,4 @@ return (
 )
 }
 Here, we're using Remix's useActionData hook and TanStack Form's useTransform hook to merge state returned from the server action with the form state.
+```
